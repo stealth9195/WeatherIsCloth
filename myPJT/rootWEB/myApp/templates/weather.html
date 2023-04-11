@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>{{weather.city_name.city_name}}</h3>
+    <h3><a href="../cloth/">오늘의 옷 추천</a></h3>
+    <div>
+        {{weather.date}}일
+    </div>
+    <div>
+        <ul>
+            <li>최고기온 : {{weather.Highest_temperature}}</li>
+            <li>최저기온 : {{weather.Lowest_temperature}}</li>
+        </ul>
+    </div>
+    {% for w in weathers %}
+    {% if w.city_name.city_name == weather.city_name.city_name and w.date > weather.date %}
+    <div>
+        {{w.date}}일
+
+    </div>
+    <div>
+        <ul>
+            <li>최고기온 : {{w.Highest_temperature}}</li>
+            <li>최저기온 : {{w.Lowest_temperature}}</li>
+        </ul>
+    </div>
+    {% endif %}
+    {% endfor %}
+
+</body>
+</html>

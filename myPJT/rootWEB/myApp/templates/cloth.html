@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% for w in weather %}
+    {% if w.id == 2 %}
+    <div>
+        {{w.city_name.city_name}}
+    </div>
+        <li>최고기온 : {{w.Highest_temperature}}</li>
+        <li>최저기온 : {{w.Lowest_temperature}}</li>
+
+    {% endif %}
+    {% endfor %}
+
+    <h3>추천코디</h3>
+    {% for c in combination %}
+    {% if c.Highest_temperature < 20 %}
+    <div>{{c.combination}}</div>
+    <div>{{c.outer}}</div>
+    <div>{{c.torso}}</div>
+    <div>{{c.pants}}</div>
+    <div>{{c.shoes}}</div>
+    {% endif %}
+    {% endfor %}
+</body>
+</html>
